@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import Button from '../components/button.jsx';
+import Button from '../components/Button.jsx';
 import UserProfileCard from '../components/dashboard/UserProfileCard.jsx';  
 import WeeklyGoal from '../components/dashboard/WeeklyGoal.jsx';
 import AIInsightCard from '../components/dashboard/AIInsightCard.jsx';
