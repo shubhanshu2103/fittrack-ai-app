@@ -1,7 +1,7 @@
 // client/src/pages/ProfilePage.jsx
 import React, { useState } from 'react';
-import Button from '../components/button.jsx';
-import Input from '../components/input.jsx';
+import Button from '../components/Button.jsx';
+import Input from '../components/Input.jsx';
 
 const ProfilePage = () => {
   // Dummy data, which we will later fetch from our API
