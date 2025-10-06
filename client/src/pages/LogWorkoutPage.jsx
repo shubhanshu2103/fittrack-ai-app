@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import api from '../api.js';
-import Button from '../components/button.jsx';
-import Input from '../components/input.jsx';
+import Button from '../components/Button.jsx';
+import Input from '../components/Input.jsx';
 import { FiPlus, FiTrash2 } from 'react-icons/fi';
 
 const LogWorkoutPage = () => {
