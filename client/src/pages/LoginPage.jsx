@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link , useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import Button from '../components/button.jsx';
-import Input from '../components/input.jsx';
+import Button from '../components/Button.jsx';
+import Input from '../components/Input.jsx';
 import api from '../api.js';
 
 const LoginPage = () => {
