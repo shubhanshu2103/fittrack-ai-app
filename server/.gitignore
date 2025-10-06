@@ -1,0 +1,17 @@
+# server/.gitignore
+
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Prisma
+# These files can contain sensitive schema information or are generated locally
+/prisma/dev.db
+/prisma/dev.db-journal
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
