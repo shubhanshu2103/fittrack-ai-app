@@ -150,23 +150,14 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
+exports.Prisma.QueryMode = {
+  default: 'default',
+  insensitive: 'insensitive'
+};
+
 exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
-};
-
-exports.Prisma.UserOrderByRelevanceFieldEnum = {
-  email: 'email',
-  password: 'password',
-  name: 'name'
-};
-
-exports.Prisma.WorkoutOrderByRelevanceFieldEnum = {
-  name: 'name'
-};
-
-exports.Prisma.ExerciseLogOrderByRelevanceFieldEnum = {
-  name: 'name'
 };
 
 
