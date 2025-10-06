@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import Button from '../components/button.jsx';
-import Input from '../components/input.jsx';
+import Button from '../components/Button.jsx';
+import Input from '../components/Input.jsx';
 
 const RegisterPage = () => {
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
