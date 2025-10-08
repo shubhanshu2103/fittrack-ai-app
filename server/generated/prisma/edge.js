@@ -122,14 +122,23 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
-exports.Prisma.QueryMode = {
-  default: 'default',
-  insensitive: 'insensitive'
-};
-
 exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
+};
+
+exports.Prisma.UserOrderByRelevanceFieldEnum = {
+  email: 'email',
+  password: 'password',
+  name: 'name'
+};
+
+exports.Prisma.WorkoutOrderByRelevanceFieldEnum = {
+  name: 'name'
+};
+
+exports.Prisma.ExerciseLogOrderByRelevanceFieldEnum = {
+  name: 'name'
 };
 
 
@@ -176,7 +185,7 @@ const config = {
   "datasourceNames": [
     "db"
   ],
-  "activeProvider": "postgresql",
+  "activeProvider": "mysql",
   "postinstall": false,
   "inlineDatasources": {
     "db": {
@@ -186,8 +195,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id                Int       @id @default(autoincrement())\n  email             String    @unique\n  password          String\n  name              String?\n  workouts          Workout[]\n  weeklyWorkoutGoal Int?      @default(4)\n}\n\nmodel Workout {\n  id       Int           @id @default(autoincrement())\n  name     String\n  date     DateTime      @default(now())\n  user     User          @relation(fields: [userId], references: [id])\n  userId   Int\n  exercise ExerciseLog[]\n}\n\nmodel ExerciseLog {\n  id              Int     @id @default(autoincrement())\n  name            String\n  sets            Int\n  reps            Int\n  weightKg        Float?\n  durationMinutes Int?\n  workout         Workout @relation(fields: [workoutId], references: [id], onDelete: Cascade)\n  workoutId       Int\n}\n",
-  "inlineSchemaHash": "97ed6bcc72083cd7ecf7d2de28d9b82a595a48c10ada50ba360d926810afd24b",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"mysql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id                Int       @id @default(autoincrement())\n  email             String    @unique\n  password          String\n  name              String?\n  workouts          Workout[]\n  weeklyWorkoutGoal Int?      @default(4)\n}\n\nmodel Workout {\n  id       Int           @id @default(autoincrement())\n  name     String\n  date     DateTime      @default(now())\n  user     User          @relation(fields: [userId], references: [id])\n  userId   Int\n  exercise ExerciseLog[]\n}\n\nmodel ExerciseLog {\n  id              Int     @id @default(autoincrement())\n  name            String\n  sets            Int\n  reps            Int\n  weightKg        Float?\n  durationMinutes Int?\n  workout         Workout @relation(fields: [workoutId], references: [id], onDelete: Cascade)\n  workoutId       Int\n}\n",
+  "inlineSchemaHash": "3cd5e972e81bf33228756dd4b67282e374afeed5d0b834b25afa981d851eaccf",
   "copyEngine": true
 }
 config.dirname = '/'
