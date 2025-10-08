@@ -13,6 +13,7 @@ const cors = require('cors')
 
 const app = express()
 const prisma = new PrismaClient()
+const allowedOrigin = process.env.CLIENT_ORIGIN_URL || 'http://localhost:5173';
 
 
 app.use(cors({
